@@ -2,6 +2,8 @@ env: "development"
 
 storage_path: "./config/local.yaml"
 
+token_ttl: 1h
+
 grpc:
   port: 11011
   timeout: 5s
