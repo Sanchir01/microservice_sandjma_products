@@ -1,0 +1,25 @@
+version: "3"
+
+tasks:
+  air:
+    aliases:
+      - gen
+    desc: "Generate grpc proto file"
+    cmds:
+      - air
+  build:
+    desc: "Building go project"
+    cmds:
+      - go build -o ./.bin/main ./cmd/main/main.go
+  run:
+    aliases:
+      - go
+    desc: "Build and run the Go project"
+    deps:
+      - |
+        chmod +x ./.bin/main
+        build
+    cmds:
+      - ./.bin/main
+    silent: true
+

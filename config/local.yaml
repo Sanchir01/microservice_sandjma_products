@@ -1,0 +1,15 @@
+env: "development"
+
+storage_path: "./config/local.yaml"
+
+grpc:
+  port: 11011
+  timeout: 5s
+
+database:
+  host: "localhost"
+  port: "5436"
+  user: "postgres"
+  ssl: "disable"
+  password: "postgres"
+  dbname: "test"
