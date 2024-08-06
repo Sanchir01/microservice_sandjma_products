@@ -6,7 +6,7 @@ toolchain go1.22.5
 
 require (
 	github.com/Sanchir01/microservice v0.0.0-20240731203819-015c68c0654c
-	github.com/Sanchir01/protos_files_job v0.0.0-20240728203649-b3b2a6e870bf
+	github.com/Sanchir01/protos_files_job v0.0.0-20240804153925-5be24c94713c
 	github.com/fatih/color v1.17.0
 	github.com/go-chi/chi/v5 v5.1.0
 	github.com/ilyakaznacheev/cleanenv v1.5.0

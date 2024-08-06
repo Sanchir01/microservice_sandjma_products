@@ -3,6 +3,7 @@ package main
 import (
 	"github.com/Sanchir01/microservice_sandjma_products/internal/app"
 	"github.com/Sanchir01/microservice_sandjma_products/internal/config"
+	"github.com/Sanchir01/microservice_sandjma_products/pkg/db/connect"
 	"github.com/Sanchir01/microservice_sandjma_products/pkg/lib/logger/handlers/slogpretty"
 	"log/slog"
 	"os"
@@ -22,9 +23,12 @@ func main() {
 
 	lg.Info("starting application", slog.Any("config", cfg))
 	application := app.NewApp(lg, cfg.GRPC.Port)
+	db := connect.PostgresMain(cfg, lg)
+	lg.Info("database", db)
 	go func() {
 		application.GRPCSrv.MustRun()
 	}()
+
 	stop := make(chan os.Signal, 1)
 
 	signal.Notify(stop, os.Interrupt, syscall.SIGTERM, syscall.SIGINT)

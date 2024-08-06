@@ -31,6 +31,7 @@ func (g *GrpcApp) MustRun() {
 	}
 
 }
+
 func (g *GrpcApp) Run() error {
 	const op = "grpcapp.GrpcApp.Run"
 
