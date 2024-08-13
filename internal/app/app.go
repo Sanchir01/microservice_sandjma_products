@@ -15,6 +15,6 @@ func NewApp(log *slog.Logger, grpcPort int) *App {
 
 	// TODO: init products server
 
-	grpcApp := grpcapp.New(log, grpcPort)
+	grpcApp := grpcapp.NewGrpcApp(log, grpcPort)
 	return &App{GRPCSrv: grpcApp}
 }

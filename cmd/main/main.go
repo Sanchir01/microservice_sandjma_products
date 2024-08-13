@@ -38,7 +38,6 @@ func main() {
 	lg.Info("stoppping application", slog.String("signal", sign.String()))
 
 	application.GRPCSrv.Stop()
-	// app gracefully stop
 }
 
 func setupLogger(env string) *slog.Logger {
