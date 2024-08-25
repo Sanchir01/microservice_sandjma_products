@@ -1,17 +1,19 @@
 module github.com/Sanchir01/microservice_sandjma_products
 
-go 1.22.4
+go 1.22.5
 
-toolchain go1.22.5
+toolchain go1.22.6
 
 require (
-	github.com/Sanchir01/protos_files_job v0.0.0-20240804153925-5be24c94713c
+	github.com/Sanchir01/protos_files_job v0.0.0-20240825190026-7faadc638e10
 	github.com/fatih/color v1.17.0
 	github.com/go-chi/chi/v5 v5.1.0
 	github.com/google/uuid v1.6.0
 	github.com/ilyakaznacheev/cleanenv v1.5.0
 	github.com/jmoiron/sqlx v1.4.0
 	github.com/joho/godotenv v1.5.1
+	github.com/lib/pq v1.10.9
+	github.com/samber/lo v1.47.0
 	golang.org/x/exp v0.0.0-20240719175910-8a7402abbf56
 	google.golang.org/grpc v1.65.0
 )

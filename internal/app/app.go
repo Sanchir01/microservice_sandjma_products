@@ -16,7 +16,7 @@ func NewApp(log *slog.Logger, grpcPort int, db *sqlx.DB) *App {
 
 	store := postgres.NewProductPostgresStorage(db)
 
-	productService := productservice.NewProducts(log, store)
+	productService := productservice.New(log, store)
 
 	grpcApp := grpcapp.NewGrpcApp(log, grpcPort, productService)
 	return &App{GRPCSrv: grpcApp}

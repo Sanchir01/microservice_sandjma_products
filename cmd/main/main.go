@@ -21,10 +21,11 @@ func main() {
 
 	lg := setupLogger(cfg.Env)
 
-	lg.Info("starting application", slog.Any("config", cfg))
-	application := app.NewApp(lg, cfg.GRPC.Port)
 	db := connect.PostgresMain(cfg, lg)
-	lg.Info("database", db)
+	defer db.Close()
+
+	application := app.NewApp(lg, cfg.GRPC.Port, db)
+
 	go func() {
 		application.GRPCSrv.MustRun()
 	}()
