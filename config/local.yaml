@@ -10,7 +10,7 @@ grpc:
 
 database:
   host: "localhost"
-  port: "5432"
+  port: "5435"
   user: "postgres"
   ssl: "disable"
   dbname: "test"
